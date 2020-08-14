@@ -1,0 +1,195 @@
+
+
+
+Classe/Molde/Forma/Prototipos/Classificação
+
+Objetos
+-Coisa material ou abstrata que pode ser percebida, 
+pelos sentidos e descrita por meio de suas caractrísticas,
+comportamentos e estado atual.
+
+Coisas que eu tenho
+Atributos/ Características/ Dados
+
+Modelo
+Cor 
+Ponta 
+Carga
+Tampada
+
+Coisas que eu faço 
+Comportamento/ Métodos/ Procedimentos/ Rotinas
+
+Escrever
+Rabiscar
+Pintar
+Tampar
+Destampar
+
+
+Como estou agora?
+Características atuais no nomento que estou atualizando esse objeto.
+Azul
+
+Classe Caneta
+	O que ele tem?
+	modelo:Caractere (letras e números)
+	cor:Caractere (azul)
+	ponta:Real (0.5)
+	carga:inteiro (90% de carga)
+	tampada:Logico (tampada = true ou false)
+
+	O que ele faz?
+	Metodos
+	Metodo rabiscar()
+	  Se (tampada) entao
+		 Escreva("ERRO")
+	  senao
+		 Escreva("Rabisco")
+	  Fimse
+	metodo tampar()
+		tampada = verdadeiro
+	FimMetodo
+
+FimClasse
+
+Instancias
+C1 
+c1 = nova Caneta
+c1.cor = "Azul"
+c1.ponta = "0.5"
+c1.tampada = falso
+c1.rabiscar()
+
+C2
+c2 = nova Caneta
+c2.cor = "Vermelho"
+c2.ponta = 1.0
+c2.tampada = falso
+c2.tampar()
+
+
+CLASSE 
+Define os atributos e métodos comuns
+que serão compartilhados por um objeto
+
+OBJETO 
+Quando instancio uma classe
+
+Outro Exemplo
+
+Abstração
+Dados de pessoas.
+
+Atividade 
+Exercicio 1
+- identifique dois objetos físicos do seu ambiente e classifique-os.(ex:Cadeira)
+- Identifique dois objetos conceituais do seu dia-a-dia e classifique-os.(ex:aula)
+
+Objeto Fisicos
+
+	Cadeira
+	   -Atributos
+	    cor :caracter (preta)
+		rodas :real(tamanho)
+		braços: real (tamanho)
+		almofadas:boolean(True)
+		ocupada:boolean(true)
+	   
+	   -Metodos
+	    sentar()
+		levantar()
+		regularAltura()
+	   
+	   -Estados
+	    Novo
+		Ocupada
+		Desocupada
+		Alta
+		Baixa
+		
+		
+	Garrafa
+	   -Atributos
+	   modelo:Caractere(Tapuware)
+	   cor:caracter (rosa,azul)
+	   cordinha: boolean (true)
+	   tampa: boolean(true-tampada)
+	   rosca: boolean(true)
+	   
+	   
+	   -Métodos
+	   abrir()
+	   tampar()
+	   
+	   -Estado
+	   com alguns riscos
+	   Tampada
+	   Fechada
+	   Cheia
+	   Vazia
+
+Objetos Abstratos
+
+    CursosEmVideo
+       -Atributos
+        quantAulas : Caractere(15 aulas)
+        nome: Caractere(Curso POO - Java)
+        dateInicio: Data (11/08/20)
+        dateFim: Data (11/08/20)
+        status: Caractere(Cursando)		
+	   
+	   -Metodos
+	    Assistir()
+		Pagar()
+		Increver()
+	   
+	   -Estado
+	    Cursando 
+		Concluido
+	
+    Aluno
+        -Atributos
+		nome: Caractere(Fernanda Maresi)
+		idade: Inteiro (31 anos)
+		cpf: 555.555.555-55
+		curso :Caractere(Engenharia de Software)
+        matéria:Caractere (Java)
+		notas: real(8,5)
+		status: Caractere(Aprovado)
+		
+		
+		-Métodos
+		Cadastrar()
+		CancelarCurso()
+		
+		
+		-Estado
+		Cursando
+		Cancelado
+		Concluído
+        		
+		
+	
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
