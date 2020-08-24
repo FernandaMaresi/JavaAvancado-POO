@@ -1,0 +1,250 @@
+Sobre a programação orientada a objetos, analise:
+
+I. Neste tipo de programação, objetos executam ações, mas não suportam propriedades ou atributos.
+II. Uma classe especifica o formato geral de seus objetos.
+III. As propriedades e ações disponíveis para um objeto não dependem de sua classe.
+IV. A tecnologia orientada a objetos permite que classes projetadas adequadamente sejam reutilizáveis em vários projetos.
+
+Está correto o que consta em:
+
+II, III e IV, apenas.
+I e II, apenas.
+II e IV, apenas.<-
+I, II e III, apenas.
+apenas a I
+
+
+
+=====================================================
+De acordo com o trecho de código escrito na linguagem JAVA, qual serão respectivamente os valores inteiros impressos?
+
+      public class Variaveis {
+            public static int x;
+            public int y;
+      }
+      Variaveis a = new Variaveis();
+      Variaveis b = new Variaveis();
+      a.y = 5;
+      b.y = 6;
+      a.x = 1;
+      b.x = 2;
+      System.out.println(a.y);
+      System.out.println(b.y);
+      System.out.println(a.x);
+      System.out.println(b.x);v
+	  //faz referencia a instancia sempre o ultimo valor fica para 
+	  //todas as instancias de x.
+5, 6, 1, 2
+5, 5, 1, 1
+6, 6, 2, 2
+5, 6, 2, 2<-
+6, 6, 1, 2
+
+============================================
+
+Entende-se por método abstrato aquele
+
+declarado, mas não implementado<-
+declarado e implementado
+não declarado, mas implementado
+não declarado e não implementado
+declarado mas que não será herdado
+
+==============================================
+
+Relacione os parênteses vazios e seus respectivos conceitos:
+
+(1) Classe Abstrata
+(2) Classe Final
+(3) Método Abstrato
+(4) Método Final
+
+( ) Não pode ser sobrescrito, ou seja, não pode ser redefinido na classe filha
+( ) Nunca será instanciada na forma de objeto
+( ) Não pode ser uma superclasse
+( ) Deverá conter uma implementação na classe filha
+
+4 – 1 – 2 – 3<-
+1 – 2 – 3 – 4
+4 – 2 – 1 – 3
+3 – 1 – 2 – 4
+4 – 1 – 3 – 2
+Rolar para 
+=============================================================
+
+A visibilidade ou nível de acesso de componentes internos de uma classe podem assumir três estados:
+
+público – privado – abstrato
+abstrato – acessor – modificador
+público – privado – protegido<-
+público – protegido – acessor
+privado - abstrato - abstrato
+
+============================================================
+Quando, em uma mesma classe, se definem diversos métodos de mesmo nome, temos:
+
+sobrecarga<-
+sobreposição
+herança
+encapsulamento
+sobretensão
+
+===========================================================
+
+Quais são os três pilares da Orientação a Objetos?
+
+classe, atributo e método
+abstração, sobrecarga, sobreposição
+encapsulamento, herança e polimorfismo<-
+classe, encapsulamento, sobrecarga
+método, sobreposição e polimorfismo
+
+===========================================================
+
+Os autores Booch, Rumbaugh e Jacobson reuniram suas propostas de representação e criaram o(a):
+
+Análise Estruturada
+Projeto Baseado em Objetos
+Linguagem de Modelagem Unificada<-
+Programação Orientada a Objetos
+Programação Móvel
+
+=============================================================
+
+public class Estudante extends Pessoa {   }
+public class Empregado implements Pagamento {   }
+Assinale a opção que completa as lacunas da sentença abaixo:
+
+Em relação às classes acima, é correto afirmar que a classe Estudante estende a __________________ e a classe Empregado implementa a ___________________.
+
+interface Pessoa / interface Pagamento
+classe Pessoa / classe Pagamento
+classe Pessoa / interface Pagamento<-
+interface Pessoa / classe Pagamento
+classe Pessoa / classe abstrata Pagamento
+
+============================================================
+
+Qual das alternativas abaixo é um exemplo de 
+relação superclasse – subclasse, conforme as definições de POO?
+
+torta de maçã – maçã
+automóvel – motocicleta<-
+colmeia - abelha
+alcateia – lobo
+alunos - turma
+
+===================================================
+
+package esquadra;
+class FragataLiberal {
+	int nomeComandante;
+	public int numeroCostado;
+	protected int velocidade;
+	private int dotacaoMunicao;
+}
+Que atributos da classe FragataLiberal são acessíveis fora do pacote esquadra?
+
+nenhum<-
+numeroCostado
+numeroCostado e velocidade
+nomeComandante, numeroCostado e velocidade
+nomeComandante, numeroCostado, velocidade e dotacaoMunicao
+
+=====================================================
+
+Um objeto pode conter outro objeto por meio de uma ___________. Quando temos variáveis internas que são instâncias de outras classes, temos uma ___________.
+
+agregação – delegação
+agregação – composição<-
+composição – delegação
+delegação – agregação
+herança - poliforma
+
+=================================================
+
+Sobre Programação Orientada a Objetos, analise:
+
+I. O encapsulamento garante que apenas as interfaces necessárias para interação com o objeto estejam visíveis, e atributos internos não sejam acessíveis.
+II. O polimorfismo garante que objetos possam herdar métodos e atributos de uma superclasse para a geração de uma nova classe.
+III. A herança possibilita que distintas operações na mesma classe tenham o mesmo nome, desde que alterada a assinatura.
+
+Está correto o que se afirma em
+
+III, apenas.
+II, apenas.
+I, apenas.<-
+II e III, apenas.
+I, II e III
+====================================================================================
+
+public class Clock extends Applet implements Runnable
+A palavra extends é relativa a que conceito no campo da programação Orientada a Objeto?
+
+Polinômio
+Herança<-
+Polimorfismo
+Abstração
+Encapsulamento
+
+=====================================================================================
+
+Assinale a alternativa correta com relação ao conceito de Herança em POO:
+
+é uma arquitetura de rede largamente utilizada
+é um tipo de linguagem de programação orientada a objetos
+é um mecanismo que faz com que a classe herde os atributos de uma outra após a sua morte
+é um mecanismo que permite ao programador basear uma nova classe na definição de uma classe previamente existente<-
+é um mecanismo que permite que dois métodos tenham o mesmo nome
+
+=================================================================================
+
+Um dos principais aperfeiçoamentos do modelo orientado a objeto do JAVA é o tratamento de todos os objetos como referências ao invés de valores. Identifique a alternativa que possui o formato de referenciar atributos de objetos em JAVA:
+
+objeto->atributo
+objeto<-atributo
+objeto.atributo<-
+atributo.objeto
+atributo->objeto
+
+====================================================================================
+
+Qual das declarações abaixo fará com que a classe Senha não possa ser estendida (herdada)?
+
+private class Senha()
+protected class Senha()
+final class Senha()<-
+public class Senha()
+abstract class Senha()
+
+==============================================================================================
+
+Quando se utiliza o conceito de encapsulamento da programação orientada a objetos, enquanto a ______________ define os detalhes internos do componente, a ____________ lista os serviços fornecidos por ele.
+
+interface – implementação
+classe – implementação
+interface – classe
+implementação – interface<-
+interface – classe
+
+============================================================================================
+
+final int i = 1; 
+System.out.print (i++);
+A execução dessas linhas vai resultar:
+
+o programa entra em loop
+erro, pois não é possível alterar o valor de uma variável final<-
+imprime o valor 0
+imprime o valor 1
+imprime o valor 2
+
+==========================================================================================
+
+Para a Orientação a Objetos, ____________ é algo que ele tem, ___________ é algo que ele faz e ____________ é o significado obtido pela combinação de suas variáveis internas.
+
+método, atributo, estado
+estado, método, atributo
+estado, atributo, método
+atributo, método, herança
+atributo, método, estado<-
