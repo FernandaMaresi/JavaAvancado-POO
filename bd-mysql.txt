@@ -1,0 +1,471 @@
+Comandos essenciais
+
+Banco de dados
+//Abre o banco
+use nomeBanco
+
+//padrao utf8 = Latino
+- criacao do banco
+CREATE DATABASE nomeBanco
+default character set utf8
+DEFAULT COLLATE utf8_general_ci;
+
+- apagando banco
+drop database nomeBanco;
+
+-criando uma tabela
+CREATE TABLE pessoas (
+//registros , tuplas
+//add automaticamente
+    id int NOT NULL auto_increment,
+//not null precisa colocar o nome
+    nome varchar(30) NOT NULL,
+    nascimento date,
+    //enum aceita m ou f
+    sexo enum('M','F'),
+    //5 casas //2 apos a virgula
+    peso decimal (5,2),
+    //3 casas // 2 apos a virgula
+    altura decimal(3,2),
+    //se ninguem digitar nada fica Brasil
+    nacionalidade varchar(20) DEFAULT 'Brasil',
+	primary key (id)
+)DEFAULT CHARSET = utf8;
+
+//exibir a tabela
+describe ou desc pessoas;
+
+//add colunas
+//after(depois)/ first primeiro/ nada ultimo
+alter table pessoas
+
+//muda tipos primitivos e as constrantes(muda coluna)
+modify column profissao varchar(20)  default '';
+
+alter table pessoas
+add colunm profissao varchar(10);
+
+//change muda o nome da coluna
+
+//muda o nome da tabela inteira
+ALTER TABLE pessoas 
+RENAME TO gafanhotos;
+
+//alter table com drop 
+apaga colunas
+
+*COMANDOS DDL = Definicao de dados 
+-CREATE DATABASE
+-CREATE TABLE
+-ALTER TABLE
+-DROP TABLE
+
+*COMANDOS DML = Manipulação de dados
+-INSERT INTO
+-UPDATE
+-DELETE
+-TRUNCATE
+-SELECT
+
+*COMANDOS DQL = Linguagem para perguntas questionamentos.(Query)
+-SELECT
+
+
+create table e 
+create database)
+comandos dml = manipulacoa de dados(insert into)
+
+
+//INSERCAO
+INSERT INTO PESSOAS  
+//se a ordem for a mesma pode omitir essa linha
+(id, nome, nascimento, sexo, peso, altura, nacionalidade )
+VALUES 
+('1', 'Godofredo', '1984-01-02', 'M', '78.5', '1.83','Brasil');
+
+//cria a tabela caso não exista
+ create table if not exists cursos(
+ //unique campo unico não repete nas outras tabelas
+   nome varchar(30) not null unique,
+   descricao text,
+   carga int,
+   //sem sinal negativo
+   totaulas int unsigned,
+   ano year DEFAULT '2020'
+ ) DEFAULT CHARSET = utf8;
+ 
+ 
+ 
+ //apagando tabela
+ drop table cursos;
+ 
+ //manipulando 
+ -linha /registros/tuplas
+ 
+ //colunas
+ 
+ //add
+ alter table gafanhotos
+ add column prof varchar(10);
+ 
+ -colunas /campos/atributos/entidades
+ 
+ alter table cursos
+ add primary key(idcurso);
+ 
+ //update
+ //modifique os cursos / configurando o nome para html5/ onde o id for  = 1
+ update cursos
+set nome = 'HTML5' Where  idcurso = '1';
+
+update cursos
+set nome = 'PHP', ano = 2015
+where idcurso = '4';
+
+update cursos
+set nome = 'Java' , carga = '40', ano = '2015'
+where idcurso = '5' limit 1;
+
+//delete
+DELETE FROM cursos 
+where idcurso = '8';
+
+DELETE FROM cursos 
+where ano = '2050' limit 3;
+
+
+//Apaga todos os cursos
+TRUNCATE table cursos;
+ 
+ //exportar
+ -server
+ -data exportar
+ --seleciona o banco
+ --seleciona tabelas e views
+ ----estrutura online(banco de dados vazio)
+ ----estrutura date online(dados)
+ -----estrutura e date online(banco e dados)
+ ---inclute create schema
+ exportar
+ --exportar arquivos
+ --usuario e senha
+ -ok
+ 
+ //importar
+-server
+-dataimport
+-import from disk
+- Import from Self-Container File
+-seleciona o arquivos
+-start import 
+-refresh
+
+--cmd
+-show databases, tables;
+-status;
+-show tables;
+-describe cursos
+-show create table nomeTabela;
+
+
+//SELECT
+-FILTRA COLUNAS
+//ordena por nome/ desc/ cresc/asc
+select * from cursos
+order by nome desc;
+
+//nome/carga/ano
+select    nome,carga,ano      from cursos
+order by nome;
+
+//ano /nome
+select    ano,nome,carga     from cursos
+order by ano,nome;
+
+//SELECT
+-FILTRA LINHAS
+select * from cursos
+where ano='2016' order by nome;
+
+/onde ano 2016
+select nome,carga from cursos
+where ano='2016' 
+order by nome;
+
+
+select nome,carga from cursos
+where ano='2016' 
+order by nome;
+
+//SELECT
+<=/ </ >/ >=/=/<>/ 
+select nome, descricao ,ano from cursos
+where ano <> 2016
+order by ano , nome;
+
+// and
+select nome , carga , totaulas from cursos
+where carga > 35 and totaulas < 30;
+//or
+select nome , carga , totaulas from cursos
+where carga > 35 or totaulas < 30;
+
+select * from cursos
+where totaulas BETWEEN '20' AND '30'
+order by nome;
+
+//between/faixa de valores
+select nome, ano from cursos
+where ano between 2014 and 2016;
+
+select nome, ano from cursos(2014/2015/2016)
+where ano between 2014 and 2016
+order by ano desc, nome asc ;
+
+//in / valores especificos (2014/2016)
+select nome, descricao, ano from cursos
+where ano in (2014, 2016)
+order by ano;
+
+//SELECT PARTE 2
+// like / %/ _/ 
+/LIKE / parecido(% - nenhum ou vários caracteres)
+(p%/%p/%p%)- substitui e seleciona o final
+select * from cursos
+where nome like 'P%';/'p'
+
+/select * from cursos
+where nome not like '%A%';
+
+/select * from cursos
+where nome like 'ph%p_';
+
+/select * from cursos
+where nome like 'p__t%';
+
+/select * from gafanhotos
+where nome like '%_silva%';
+
+//SELECT 
+/ DISTINCT- importa apenas 1 valor de cada
+-select distinct  nacionalidade from gafanhotos
+order by nacionalidade;
+-select distinct carga from cursos
+order by carga;
+-select distinct totaulas from cursos
+order by totaulas;
+
+
+//SELECT
+/AGREGAÇÃO
+-cont
+-max
+-min
+-sum
+-avg(media)
+select  count(*) from cursos;
+select  count(*) from cursos where carga > 40;
+select  max(carga) from cursos ;
+select  max(totaulas) from cursos where ano ='2016';
+select  min(totaulas) from cursos where ano = '2016';
+select nome,  min(totaulas) from cursos where ano = '2016';
+select sum(totaulas) from cursos where ano = '2016';
+select avg(totaulas) from cursos where ano = '2016';
+
+EXERCICIOS
+1 - select * from gafanhotos where sexo = 'F';
+//ano/mes/dia
+2 - select * from gafanhotos where nascimento  between '2000-01-01' and '2015-12-31';
+3 - select * from gafanhotos where profissao = 'Programador' and sexo = 'M';
+4 - select * from gafanhotos where sexo= 'F' and nacionalidade = 'Brasil' and nome like 'j%';
+5 - select nome,nacionalidade,peso from gafanhotos where sexo= 'M' and nome like '%silva%' 
+and not nacionalidade='Brasil' and peso < 100 ;
+6 - select max(altura) from gafanhotos where sexo= 'M' and nacionalidade='Brasil' ;
+7 - select avg(peso) from gafanhotos;
+8 - select min(peso) gafanhotos where sexo = 'F' and nacionalidade <> 'Brazil' and nascimento 
+between '1190-01-01' and '2000-12-31';
+9 - select count(nome) from gafanhotos where sexo = 'F' and altura > 1.90 ;
+
+//SELECT 
+- AGRUPAMENTOS
+/GROUP BY
+- HAVING - Quem tem /having pro ordem by = where pro select/
+select ano, count(*) from cursos
+group by ano order by count(*) desc ;
+
+select ano, count(*) from cursos
+group by ano having count(ano) >=5  
+order by count(*) desc ;
+
+select ano, count(*) from cursos
+group by ano having ano > 2016
+order by count(*) desc ;
+
+select ano, count(*) from cursos
+where totaulas > 30
+group by ano having ano > 2013
+order by count(*) desc ;
+
+//SELECT DUPLO
+select ano, count(*) from cursos
+where totaulas > 30
+group by ano having ano > 2013
+order by count(*) desc ;
+
+select carga, count(*) from cursos 
+where ano > 2015
+group by carga  
+having carga > (select avg(carga) from cursos);
+
+select carga, count(*) from cursos 
+where ano > 2015
+group by carga  
+having carga > 36.6 ;
+
+EXERCICIOS 2
+1 - select profissao, count(*) from gafanhotos group by profissao order by profissao;
+2 - select sexo, count(*) from gafanhotos where nascimento > 2005-01-01 group by sexo; 
+3 - select nacionalidade, count(*) from gafanhotos where nacionalidade <> 'Brasil'
+group by nacionalidade having count(*) > 3;
+4 - select nome, peso, altura from gafanhotos where peso > 100 group by altura 
+having peso > 100 and altura > (select avg(altura) from gafanhotos);
+
+1 - 1 (Escolhe um dominante)
+1 - n (Pega a chave primaria de 1 e coloca como estrangeira pra muitos)
+n - n 
+Cliente 1 -    n Compra n   1Produto
+-Coloca a chave de 1 em muitos como estranheira.
+
+
+ACID
+Atomica - Faz tudo ou nada é considerado
+Consistência - Tem que funcionar ou volta anterior
+Isoladas - Uma não afeta a outras
+Durabilidade - Tem que durar o tempo necessário em quanto precisar.
+
+CHAVE MULTIPLA
+describe gafanhotos;
+
+alter table gafanhotos 
+add column cursopreferido int ;
+
+alter table gafanhotos 
+add foreign key(cursopreferido)
+references cursos(idcurso);
+
+/////////////////
+describe gafanhotos;
+1234
+
+4321
+
+alter table gafanhotos 
+add column cursopreferido int ;
+
+alter table gafanhotos 
+add foreign key(cursopreferido)
+references cursos(idcurso);
+
+select * from gafanhotos;
+select * from cursos;
+
+update gafanhotos set cursopreferido = '6' 
+where id = '1';
+///////////
+integridade
+delete from cursos
+where idcurso = '28';
+
+select * from gafanhotos;
+
+select * from cursos;
+
+///////////
+JOIN
+-erro
+//mostra os 30 cursos para cada aluno
+//juntos todos os cursos com o aluno/errado
+select gafanhotos.nome, gafanhotos.cursopreferido, cursos.nome, cursos.ano
+from gafanhotos join cursos;
+
+select gafanhotos.nome, gafanhotos.cursopreferido, cursos.nome, cursos.ano
+from gafanhotos join cursos
+//ligacao da chave primaria/ com a chave estrangeira de gafanhotos
+on cursos.idcurso = gafanhotos.cursopreferido;
+
+select gafanhotos.nome, cursos.nome, cursos.ano
+from gafanhotos join cursos
+on cursos.idcurso = gafanhotos.cursopreferido;
+
+//////////////
+join inner - on
+Pegar as ligações/
+select gafanhotos.nome, cursos.nome, cursos.ano
+from gafanhotos inner join cursos
+on cursos.idcurso = gafanhotos.cursopreferido
+order by gafanhotos.nome;
+
+on - apenas com as relacoes
+select gafanhotos.nome, cursos.nome, cursos.ano
+from gafanhotos join cursos
+on cursos.idcurso = gafanhotos.cursopreferido;
+
+//apelido as
+select g.nome, c.nome, c.ano
+//apelido uma vez 
+from gafanhotos as g inner join cursos as c
+on c.idcurso = g.cursopreferido
+order by g.nome;
+
+//outer join
+mostra todos os alunos
+select g.nome, c.nome, c.ano
+//gafanhoto esta a esquerda do join
+//entao ele da preferencia para a esquerda
+from gafanhotos as g left outer join cursos as c
+on c.idcurso = g.cursopreferido;
+
+//mostra todos os cursos
+select g.nome, c.nome, c.ano
+from gafanhotos as g right outer join cursos as c
+on c.idcurso = g.cursopreferido;
+
+//right
+select g.nome, c.nome, c.ano
+from gafanhotos as g right outer join cursos as c
+on c.idcurso = g.cursopreferido;
+
+////
+select g.nome, c.nome, c.ano
+from gafanhotos as g right outer join cursos as c
+on c.idcurso = g.cursopreferido;
+
+select nome, cursopreferido from gafanhotos;
+
+select nome, ano from cursos;
+
+select * from gafanhotos;
+
+select g.nome, c.nome, c.ano
+from gafanhotos as g inner join cursos as c
+on c.idcurso = g.cursopreferido
+order by g.nome;
+
+
+//////////////
+muitos para muitos
+n n
+select g.id, g.nome, a.idgafanhoto, idcurso from gafanhotos g
+JOIN gafanhoto_assiste_curso a 
+on g.id = a.idgafanhoto;
+
+select g.nome, c.nome from gafanhotos g
+JOIN gafanhoto_assiste_curso a 
+on g.id = a.idgafanhoto
+join cursos c 
+on c.idcurso = a.idcurso
+order by g.nome;
+
+
+
+
